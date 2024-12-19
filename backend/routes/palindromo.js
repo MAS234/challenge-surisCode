@@ -26,14 +26,16 @@ palindrome.post("/palindrome", async (req, res) => {
     history.push({ word, palindrome });
     }
  
-    res.status(200).json({
+    console.log("SE registro con exito")
+    return res.status(200).json({
         success: true,
         message: palindrome ? "La palabra o frase es un palíndromo." : "La palabra o frase no es un palíndromo.",
       });
 
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ success: false, error: "Ocurrio un error con el palindromo" });
+    return res.status(500).json({ success: false, error: "Ocurrio un error con el palindromo" });
+     
   }
 });
 
@@ -41,10 +43,10 @@ palindrome.post("/palindrome", async (req, res) => {
 palindrome.get("/history", async (req, res) => {
 
   try{
-      res.status(200).json({ history });
+    return res.status(200).json({ history });
   } catch{
       console.error("Error:", error);
-      res.status(500).json({ success: false, error: "Ocurrio un error en el historial" });
+      return res.status(500).json({ success: false, error: "Ocurrio un error en el historial" });
   }
 
 })
