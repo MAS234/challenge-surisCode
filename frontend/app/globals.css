@@ -6,3 +6,34 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Estilo general de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra vertical */
+  height: 8px; /* Altura de la barra horizontal */
+}
+
+/* Fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #1e1e2e; /* Color del fondo del track */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Color y estilo del thumb (deslizador) */
+::-webkit-scrollbar-thumb {
+  background: #f29f2c; /* Color del deslizador */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid #1e1e2e; /* Borde para separarlo del fondo */
+}
+
+/* Hover en el thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #f2a02c97; /* Color al pasar el mouse */
+}
+
+/* Soporte para Firefox */
+.scroll-container {
+  scrollbar-color: #f29f2c #1e1e2e; /* Color del deslizador y del track */
+  scrollbar-width: thin; /* Ancho de la barra (thin, auto, none) */
+}

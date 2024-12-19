@@ -3,25 +3,34 @@
 import React, { useState } from "react";
 import postPolindrome from "../service/verification";
 
-function VerificationPalidrome() {
+function VerificationPalidrome({ setNewWord }) {
   // Estados
   const [word, setWord] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [inputError, setInputError] = useState("");
 
   // Función para manejar el cambio en el campo de entrada
   const handleChange = (event) => {
     setWord(event.target.value);
+    setInputError(""); // Resetear error de campo cuando el usuario empieza a escribir
   };
 
   // Función para manejar el envío del formulario
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    if (!word.trim()) {
+      setInputError("Por favor, complete el campo.");
+      return; // No enviar la solicitud si el campo está vacío
+    }
+
     try {
-      await postPolindrome(word, setMessage, setError); 
+      await postPolindrome(word, setMessage, setError);
+      setNewWord(word);
     } catch (error) {
       console.error(error);
-      setError("Hubo un error al verificar el palíndromo fdsfdsd.");
+      setError("Hubo un error al verificar el palíndromo.");
     }
   };
 
@@ -48,8 +57,11 @@ function VerificationPalidrome() {
         </button>
       </form>
 
+      {/* Mensaje de error si el campo está vacío */}
+      {inputError && <p className="mt-4 text-red-500">{inputError}</p>}
+
       {/* Mostrar mensajes de éxito o error */}
-      {message && <p className="mt-4 text-green-500">{message}</p>}
+      {message && <p className="mt-4 text-white">{message}</p>}
       {error && <p className="mt-4 text-red-500">{error}</p>}
     </div>
   );
