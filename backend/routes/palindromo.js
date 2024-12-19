@@ -37,6 +37,17 @@ palindrome.post("/palindrome", async (req, res) => {
   }
 });
 
+// GET ENDPOINT
+palindrome.get("/history", async (req, res) => {
+
+  try{
+      res.status(200).json({ history });
+  } catch{
+      console.error("Error:", error);
+      res.status(500).json({ success: false, error: "Ocurrio un error en el historial" });
+  }
+
+})
 
 
 export default palindrome;
