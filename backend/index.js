@@ -2,7 +2,7 @@ import palindrome from './routes/palindromo.js';
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Middleware para analizar JSON
 app.use(express.json());
