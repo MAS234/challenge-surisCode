@@ -22,9 +22,9 @@ palindrome.post("/palindrome", async (req, res) => {
     const palindrome = isPalindrome(word);
 
     if (palindrome) {
-      history.push({ word, palindrome: 1, message:"Es un palindromo" });
+      history.push({ word, palindrome: 1, message:"Palindromo:" });
     } else {
-      history.push({ word, palindrome: 0, message:"No es un palindromo" });
+      history.push({ word, palindrome: 0, message:"No palindromo:" });
     }
     
  

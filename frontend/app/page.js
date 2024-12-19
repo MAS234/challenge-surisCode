@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <Link
-          href="/polindrome"
+          href="/palindrome"
           className="bg-[#f29f2c] mt-8 md:mt-10 rounded-lg w-full max-w-xs hover:bg-[#f2a02c97] duration-300 cursor-pointer"
         >
           <p className="text-white font-semibold text-lg md:text-xl p-3 text-center">
