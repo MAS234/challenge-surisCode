@@ -13,7 +13,7 @@ function VerificationPalidrome({ setNewWord }) {
   // Función para manejar el cambio en el campo de entrada
   const handleChange = (event) => {
     setWord(event.target.value);
-    setInputError(""); // Resetear error de campo cuando el usuario empieza a escribir
+    setInputError("");
   };
 
   // Función para manejar el envío del formulario
@@ -22,11 +22,11 @@ function VerificationPalidrome({ setNewWord }) {
     
     if (!word.trim()) {
       setInputError("Por favor, complete el campo.");
-      return; // No enviar la solicitud si el campo está vacío
+      return; 
     }
 
     try {
-      await postPolindrome(word, setMessage, setError);
+      await postPolindrome(word, setMessage, setError, setWord);
       setNewWord(word);
     } catch (error) {
       console.error(error);

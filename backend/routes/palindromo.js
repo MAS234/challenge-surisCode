@@ -21,10 +21,12 @@ palindrome.post("/palindrome", async (req, res) => {
     // Verificar si la palabra o frase es un palíndromo
     const palindrome = isPalindrome(word);
 
-    if(palindrome){
-    // Guardar en el historial
-    history.push({ word, palindrome });
+    if (palindrome) {
+      history.push({ word, palindrome: 1, message:"Es un palindromo" });
+    } else {
+      history.push({ word, palindrome: 0, message:"No es un palindromo" });
     }
+    
  
     console.log("SE registro con exito")
     return res.status(200).json({
