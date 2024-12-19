@@ -33,7 +33,7 @@ function VerificationPalidrome({ setNewWord }) {
   };
 
   return (
-    <div className="w-full max-w-md md:w-96 h-auto p-6 md:h-96 border m-auto flex flex-col justify-center items-center border-white rounded-3xl">
+    <div className="w-full max-w-md md:w-96 h-auto p-6 md:h-96 border-2 m-auto flex flex-col justify-center items-center border-white rounded-3xl hover:bg-[#f29f2c] duration-300">
       <h1 className="text-center text-white text-2xl font-semibold mb-6">
         Verificador
       </h1>
@@ -48,7 +48,7 @@ function VerificationPalidrome({ setNewWord }) {
           placeholder="Escriba una palabra o frase"
         />
         <button
-          className="bg-[#f29f2c] rounded-lg w-full md:w-28 h-10 hover:bg-[#f2a02c97] duration-300 cursor-pointer text-white mt-10"
+          className="bg-[#f29f2c] hover:bg-green-500 rounded-2xl w-full md:w-28 h-10 border-2 duration-300 cursor-pointer text-white mt-10"
           type="submit"
         >
           Verificar
